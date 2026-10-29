@@ -1,0 +1,31 @@
+{
+  "name": "ecobrief",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local wildlife-research search dashboard built from open scholarly sources.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/**/*.test.ts\"",
+    "fetch-papers": "node --disable-warning=ExperimentalWarning scripts/fetch-papers.ts",
+    "preprocess": "node --disable-warning=ExperimentalWarning scripts/preprocess.ts"
+  },
+  "dependencies": {
+    "entities": "^9.0.0",
+    "next": "^16.4.3",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.20.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^5.9.3"
+  }
+}
