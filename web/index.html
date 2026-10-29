@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EcoBrief | Wildlife research search</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="eyebrow">EVIDENCE FOR CONSERVATION</p>
+        <h1>EcoBrief</h1>
+        <p class="intro">Search a curated local corpus of wildlife conservation research from Europe PMC.</p>
+      </header>
+
+      <section class="search-panel" aria-label="Search research papers">
+        <form id="search-form">
+          <label for="query">What are you researching?</label>
+          <div class="query-row">
+            <input id="query" name="query" type="search" placeholder="Try: elephant habitat fragmentation" autocomplete="off">
+            <button type="submit">Search papers</button>
+          </div>
+          <div class="filter-row">
+            <label for="year">Publication year</label>
+            <select id="year" name="year"><option value="">All years</option></select>
+          </div>
+          <div class="filter-grid">
+            <label for="animal">Animal
+              <select id="animal"><option value="">Any animal</option></select>
+            </label>
+            <label for="region">Region
+              <select id="region"><option value="">Any region</option><option value="africa">Africa</option><option value="asia">Asia</option><option value="india">India</option><option value="amazon">Amazon</option><option value="europe">Europe</option></select>
+            </label>
+            <label for="sort">Sort results
+              <select id="sort"><option value="relevance">Relevance</option><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="animal">By animal group</option></select>
+            </label>
+          </div>
+          <div class="topics" aria-label="Research topic filters">
+            <button class="topic active" data-topic="" type="button">All topics</button>
+            <button class="topic" data-topic="conflict" type="button">Conflict</button>
+            <button class="topic" data-topic="monitoring" type="button">Monitoring</button>
+            <button class="topic" data-topic="habitat" type="button">Habitat</button>
+            <button class="topic" data-topic="movement" type="button">Movement</button>
+            <button class="topic" data-topic="conservation" type="button">Conservation</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results-section" aria-live="polite">
+        <div class="results-heading">
+          <p id="result-count">Loading research corpus…</p>
+          <div><button id="saved-papers" class="text-button" type="button">Saved (<span>0</span>)</button><button id="clear-search" class="text-button" type="button" hidden>Clear search</button></div>
+        </div>
+        <aside id="reading-list" class="reading-list" hidden>
+          <div><strong>Reading list</strong><button id="export-saved" class="text-button" type="button">Export CSV</button></div>
+          <div id="saved-list"></div>
+        </aside>
+        <div id="results" class="results"></div>
+      </section>
+    </main>
+    <template id="result-template">
+      <article class="paper-card">
+        <div class="paper-meta"></div>
+        <h2></h2>
+        <div class="animal-tags"></div>
+        <p class="authors"></p>
+        <div class="takeaway"><strong>Abstract opening</strong><p></p></div>
+        <p class="abstract"></p>
+        <div class="card-actions"><a class="paper-link" target="_blank" rel="noreferrer">Read publication <span aria-hidden="true">↗</span></a><button class="save-paper" type="button">Save paper</button></div>
+        <p class="related"></p>
+      </article>
+    </template>
+    <script src="corpus.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
