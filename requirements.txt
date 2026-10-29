@@ -1,2 +1,0 @@
-# EcoBrief uses only the Python standard library; nothing to install.
-# Python 3.9+ is required.

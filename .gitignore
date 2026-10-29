@@ -1,4 +1,13 @@
-.venv/
-__pycache__/
-*.pyc
-*.exe
+# dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# logs and local environment files
+npm-debug.log*
+.env*
+/.claude
